@@ -1,6 +1,8 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class DateDemo{
     public static void main(String[] args){
@@ -29,5 +31,51 @@ public class DateDemo{
         } catch (ParseException e) {
             System.out.println("Unparsable using: " + fmt);
         }
+    }
+}
+
+class SleepDemo{
+    public static void main(String[] args){
+        try{
+//        System.out.println(new Date() + "\n");
+//        Thread.sleep(5 * 60 * 10);
+//        System.out.println(new Date() + "\n");
+
+            long start = System.currentTimeMillis();
+            System.out.println(new Date());
+
+            Thread.sleep(5 * 60 * 10);
+            System.out.println(new Date());
+
+            long end = System.currentTimeMillis();
+            long diff = end - start;
+            System.out.println("Difference in milliseconds is : " + diff);
+        } catch (Exception e){
+            System.out.println("Got an exception");
+        }
+    }
+}
+
+class GregorianCalenderDemo{
+    public static void main(String []args){
+        String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
+        GregorianCalendar calender = new GregorianCalendar();
+        System.out.print("Date: ");
+        System.out.print(months[calender.get(Calendar.MONTH)]);
+        System.out.print(" "+ calender.get(Calendar.DATE) + " ");
+        System.out.println(calender.get(Calendar.YEAR));
+        System.out.print("Time: ");
+        System.out.print(calender.get(Calendar.HOUR) + ":");
+        System.out.print(calender.get(Calendar.MINUTE) + ":");
+        System.out.print(calender.get(Calendar.SECOND));
+
+        System.out.println();
+        if (calender.isLeapYear(Calendar.YEAR)){
+            System.out.println("The current year is a leap year");
+        } else {
+            System.out.println("The current year is not a leap year");
+        }
+
     }
 }
