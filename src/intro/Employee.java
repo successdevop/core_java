@@ -1,8 +1,8 @@
-//public class Employee{
+package intro;//public class intro.Employee{
 //    public String name;
 //    private double salary;
 //
-//    public Employee(String empName){
+//    public intro.Employee(String empName){
 //        name = empName;
 //    }
 //
@@ -16,7 +16,7 @@
 //    }
 //
 //    public static void main(String []args){
-//        Employee emp = new Employee("Success");
+//        intro.Employee emp = new intro.Employee("Success");
 //        emp.setSalary(1000.00);
 //        emp.printEmp();
 //    }

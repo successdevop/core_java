@@ -1,9 +1,11 @@
+package intro;
+
 public class Main{
     public static void main(String[] args){
 //        System.out.println("Hello World");
-//        FreshJuice juice = new FreshJuice();
+//        intro.FreshJuice juice = new intro.FreshJuice();
 //
-//        juice.size = FreshJuice.FreshJuiceSize.MEDIUM;
+//        juice.size = intro.FreshJuice.FreshJuiceSize.MEDIUM;
 //        System.out.println("Size: " + juice.size);
 
 //        int num1 = 5004;
