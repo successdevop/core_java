@@ -1,5 +1,7 @@
 package control_statements;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -238,25 +240,50 @@ class ContinueTest{
 //            System.out.println("num : "+num);
 //        }
 
-        for (int i = 1; i <= 3; i++){
-            System.out.print("when i is : "+i+" j = ");
-            for (int j = 1; j <= 3; j++){
-                if (i == j){
-                    continue;
-                }
-                System.out.print(j + ", ");
-            }
-            System.out.println();
-        }
-        System.out.println();
+//        for (int i = 1; i <= 3; i++){
+//            System.out.print("when i is : "+i+" j = ");
+//            for (int j = 1; j <= 3; j++){
+//                if (i == j){
+//                    continue;
+//                }
+//                System.out.print(j + ", ");
+//            }
+//            System.out.println();
+//        }
+//        System.out.println();
+//
+//        for (int i = 1; i <= 3; i++) {
+//            for (int j = 1; j <= 3; j++) {
+//                if (i == j) {
+//                    continue; // Skip when row index equals column index
+//                }
+//                System.out.println("i: " + i + ", j: " + j);
+//            }
+//        }
 
-        for (int i = 1; i <= 3; i++) {
-            for (int j = 1; j <= 3; j++) {
-                if (i == j) {
-                    continue; // Skip when row index equals column index
-                }
-                System.out.println("i: " + i + ", j: " + j);
+//        try {
+//            BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+//            String line;
+//            while((line = br.readLine()) != null){
+//                if (line.trim().isEmpty()){
+//                    continue;
+//                }
+//                System.out.println(line);
+//            }
+//            br.close();
+//        } catch (Exception e){
+//            System.out.println(e);
+//        }
+
+        String str = "hello world";
+        char[] chArr = str.toCharArray();
+        System.out.println(chArr.toString());
+
+        for (char ch : chArr){
+            if ("aeiou".indexOf(ch) != -1){
+                continue;
             }
+            System.out.println("char : "+ch);
         }
     }
 }

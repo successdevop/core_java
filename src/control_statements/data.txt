@@ -1,0 +1,6 @@
+In this example, we're showing the use of a continue
+ statement to skip an element 15 in a do while loop which is used to print element from 10 to 19.
+ Here we've initialized an int variable x with a value of 10. Then in do while   loop, we're checking x as less
+   than 20 after body and within while loop, we're printing the value of x and
+  incrementing the value of x by 1. While loop will run until x becomes 15. Once x is 15,
+  continue statement will jump the while loop while skipping the execution of the body and loop continues.
