@@ -26,7 +26,22 @@ public class ConstructorExample{
 
     public static void main(String[] args){
         ConstructorExample obj = new ConstructorExample("Success", 34);
-
         obj.printDetails();
+        System.out.println();
+
+        Logger log = new Logger();
+
+    }
+}
+
+class Logger{
+    private String format;
+
+    private String getFormat(){
+        return this.format;
+    }
+
+    private void setFormat(String format){
+        this.format = format;
     }
 }
