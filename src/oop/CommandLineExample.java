@@ -25,3 +25,18 @@ public class CommandLineExample{
         System.out.println("Max number is : "+result);
     }
 }
+
+class Main{
+    int num1, num2;
+
+    Main(){
+        num1 = -1;
+        num2 = -1;
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main();
+        System.out.println(obj.num1);
+        System.out.println(obj.num2);
+    }
+}
