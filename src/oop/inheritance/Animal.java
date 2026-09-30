@@ -19,3 +19,16 @@ class Dog extends Mammal{
 
     }
 }
+
+class One1{
+    public void printOne(){
+        System.out.println("printOne() method of One class");
+    }
+}
+
+class Main1 extends One1{
+    public static void main(String[] args){
+        Main1 main = new Main1();
+        main.printOne();
+    }
+}
