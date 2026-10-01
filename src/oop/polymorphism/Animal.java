@@ -2,18 +2,27 @@ package oop.polymorphism;
 
 interface Vegetarian{}
 
-public class Animal{}
+public class Animal{
+    public void move(){
+        System.out.println("Animals can move");
+    }
+}
 
 class Deer extends Animal implements Vegetarian{
-    public static void main(String[] args){
-        Deer d = new Deer();
-        Animal a = d;
-        Vegetarian v = d;
-        Object o = d;
+    public void move(){
+        System.out.println("Dogs can walk and run");
+    }
 
-        System.out.println(d instanceof Deer);
-        System.out.println(a instanceof Deer);
-        System.out.println(v instanceof Deer);
-        System.out.println(o instanceof Deer);
+    public void bark(){
+        System.out.println("Dogs can bark");
+    }
+
+    public static void main(String[] args){
+        Animal a = new Animal();
+        Animal d = new Deer();
+
+        a.move();
+        d.move();
+//        d.bark();
     }
 }
