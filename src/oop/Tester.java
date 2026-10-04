@@ -1,5 +1,7 @@
 package oop;
 
+import oop.static_classes.Outer;
+
 public class Tester{
     int num = 10;
 
@@ -55,19 +57,21 @@ public class Tester{
     }
 
     public static void main(String[] args){
-        int a = 20, b = 30;
-        double c = 25, d = 40;
-        Tester test = new Tester();
-
-        test.print();
-        System.out.println();
-
-        Tester test2 = new Tester(30);
-        test2.print();
-
-        fun();
-
-        System.out.println("int minimum value: "+minFunction(a, b));
-        System.out.println("double minimum value: "+minFunction(d, c));
+//        int a = 20, b = 30;
+//        double c = 25, d = 40;
+//        Tester test = new Tester();
+//
+//        test.print();
+//        System.out.println();
+//
+//        Tester test2 = new Tester(30);
+//        test2.print();
+//
+//        fun();
+//
+//        System.out.println("int minimum value: "+minFunction(a, b));
+//        System.out.println("double minimum value: "+minFunction(d, c));
+        Outer.NestedDemo abc = new Outer.NestedDemo();
+        abc.print();
     }
 }

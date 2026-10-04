@@ -6,5 +6,14 @@ public class Tester{
 
         ClassicSingleton ston = ClassicSingleton.getInstance();
         ston.demoMethod();
+
+        Integer x = 5;
+        System.out.println(x);
+        x = x + 10;
+        System.out.println(x);
+
+        Boolean y = true;
+        y = false;
+        System.out.println(y);
     }
 }
