@@ -9,80 +9,87 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CreateFileDemo{
-    public static void main(String[] args){
-        System.out.println("Create file with FILE OUPUT_STREAM");
+    public static void main(String[] args) {
+        byte[] bArr = {65, 66, 67, 68, 69, 70};
         try{
-            byte[] bWrite = {65, 66, 67, 68, 69, 70};
-
-            OutputStream ops = new FileOutputStream("test.txt");
-
-            for (int i = 0; i < bWrite.length; i++){
-                ops.write(bWrite[i]);
+            OutputStream ops = new FileOutputStream("file1.txt");
+            for (int i = 0; i < bArr.length; i++){
+                ops.write(bArr[i]);
             }
             ops.close();
 
-            InputStream is = new FileInputStream("test.txt");
-            int size = is.available();
-            System.out.println(size);
+            InputStream ips = new FileInputStream("file1.txt");
+            int size = ips.available();
 
-            for(int i = 0; i < size; i++){
-                System.out.print((char) is.read() + " ");
+            for (int i = 0; i < size; i++){
+                System.out.print((char)ips.read()+" ");
             }
-            is.close();
-        } catch (Exception e){
-            e.printStackTrace();
+            ips.close();
+
+        } catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
 
 class FileMethodDemo{
-    public static void main(String[] args) {
-        System.out.println("Create file with File.createNewFile() method");
+    public static void main(String[] args){
+        String file_name = "/Users/raphtech/IdeaProjects/core_java/src/javaFiles/file2.txt";
+        File f = new File(file_name);
 
         try{
-            File f = new File("text.txt");
-
             if (f.createNewFile()){
-                System.out.println("Created new file!");
-            }else{
-                System.out.println("File already exists.");
+                System.out.println("New File Created");
+            }else {
+                System.out.println("File already exists");
             }
 
-            FileWriter writer = new FileWriter(f);
-            writer.write("Test data");
-            writer.close();
+            //Write to file
+            FileWriter fw = new FileWriter(file_name);
+            fw.write("This is a great privilege for me");
+            fw.close();
 
-            FileReader fr = new FileReader(f);
-
+            //Read from file
+            FileReader fr = new FileReader(file_name);
             int c;
+
             while((c = fr.read()) != -1){
                 char ch = (char) c;
-                System.out.print(ch + " ");
+                System.out.print(ch+" ");
             }
-        } catch (Exception e){
-            e.printStackTrace();
+            fr.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
     }
 }
 
 class FileWriteMethodDemo{
-    public static void main(String[] args){
-        String data = "Test Data";
-        try{
-            Files.write(Paths.get("log.txt"), data.getBytes());
+    public static void main(String[] args) {
+        String file_name = "/Users/raphtech/IdeaProjects/core_java/src/javaFiles/file3.txt";
+        String file_name2 = "/Users/raphtech/IdeaProjects/core_java/src/javaFiles/file4.txt";
 
-            List<String> lines = Arrays.asList("ist line", "second line");
-            Files.write(Paths.get("file6.txt"), lines, StandardCharsets.UTF_8,
+        String data = "test the file writes method";
+
+        try{
+            Files.write(Paths.get(file_name), data.getBytes());
+
+            List<String> str = Arrays.asList("ist line", "2nd line");
+            Files.write(Paths.get(file_name2), str, StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
 
-            List<String> log = Files.readAllLines(Paths.get("log.txt"));
-            System.out.println(log);
+            //read files
+            List<String> content = Files.readAllLines(Paths.get(file_name));
+            System.out.println(content);
 
-            List<String> file6 = Files.readAllLines(Paths.get("file6.txt"));
-            System.out.println(file6);
-
-        } catch (Exception e){
-            e.printStackTrace();
+            List<String> content2 = Files.readAllLines(Paths.get(file_name2));
+            System.out.println(content2);
+        } catch (IOException e){
+            throw new RuntimeException(e);
         }
     }
 }

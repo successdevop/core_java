@@ -1,43 +1,50 @@
 package javaFiles;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 
 public class FileDemo{
-    public static void main(String[] args){
-//        File myFile = new File("text.txt");
-//        System.out.println(myFile.getName());
-//        System.out.println(myFile.getAbsolutePath());
-//        System.out.println(myFile.canRead());
-//        System.out.println(myFile.canWrite());
-//        System.out.println(myFile.exists());
-//        System.out.println(myFile.isFile());
-//        try{
-//            System.out.println(myFile.createNewFile());
-//        }catch(Exception e){
-//            System.out.println("Caught exception");
-//        }
-//        System.out.println(myFile.delete());
-//        System.out.println(Arrays.toString(myFile.list()));
-//        System.out.println(myFile.mkdir());
-//        System.out.println(myFile.delete());
+    public static void main(String[] args) throws IOException {
+        File f = new File("filename.txt");
 
-        File f = null;
-        String[] str = {"file1.txt", "file2.txt", "file3.txt"};
+        String name = f.getName();
+        System.out.println(name);
 
+        String absPath = f.getAbsolutePath();
+        System.out.println(absPath);
+
+        boolean b = f.canRead();
+        System.out.println(b);
+
+        f.createNewFile();
+
+        boolean b1 = f.isFile();
+        System.out.println(b1);
+
+        long size = f.length();
+        System.out.println(size);
+
+        String[] arr = f.list();
+        System.out.println(Arrays.toString(arr));
+
+        File f2 = null;
+        String[] strs = {"test1.txt", "test2.txt"};
         try{
-            for (String s : str){
-                f = new File(s);
+            for (String s : strs){
+                f2 = new File(s);
 
-                boolean b = f.canExecute();
+                boolean bool = f2.canExecute();
 
-                String abs = f.getAbsolutePath();
+                String a = f2.getAbsolutePath();
 
-                System.out.println(abs + " is executable: " + b);
+                System.out.print(a + " ");
 
+                System.out.println("is executable: "+ bool);
             }
         } catch (Exception e){
             e.printStackTrace();
         }
+
     }
 }
