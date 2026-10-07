@@ -10,11 +10,11 @@ import java.util.List;
 
 public class CreateFileDemo{
     public static void main(String[] args) {
-        byte[] bArr = {65, 66, 67, 68, 69, 70};
+        byte[] bArr = {11,21,3,40,5};
         try{
             OutputStream ops = new FileOutputStream("file1.txt");
-            for (int i = 0; i < bArr.length; i++){
-                ops.write(bArr[i]);
+            for (byte b : bArr) {
+                ops.write(b);
             }
             ops.close();
 
