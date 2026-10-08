@@ -98,3 +98,23 @@ class FileStreamTest{
         }
     }
 }
+
+class ListDemo{
+    public static void main(String[] args) {
+        String file_name = "/Users/raphtech/IdeaProjects/core_java/";
+
+        File f = null;
+        String[] paths = null;
+
+        try{
+            f = new File(file_name);
+            paths = f.list();
+
+            for (String p: paths){
+                System.out.println(p);
+            }
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+}
