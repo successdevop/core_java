@@ -117,8 +117,8 @@ class CheckingAccount{
             double needs = amount - this.balance;
             throw new InsufficientFundsException(needs);
         }
-        System.out.println("Withdrew #"+amount+" from my account balance today.");
         this.balance -= amount;
+        System.out.println("Withdrew #"+amount+" from my account balance today.");
     }
 
     public double getBalance(){
