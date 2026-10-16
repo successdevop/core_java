@@ -26,7 +26,7 @@ public class FileDescriptorDemo{
 
 class checkFileDescriptorDemo{
     public static void main(String[] args) {
-        try(FileOutputStream fos = new FileOutputStream(new File("valid.txt"))){
+        try(FileOutputStream fos = new FileOutputStream("valid.txt")){
             FileDescriptor fds = fos.getFD();
 
             System.out.println("Is the file descriptor valid?: "+fds.valid());
