@@ -67,3 +67,42 @@ class FilePermissionDemo{
         System.out.println(fp.getActions());
     }
 }
+
+class ReaderWriterDemo{
+    public static void main(String[] args) {
+        File file = new File("file_read_write.txt");
+        try(FileWriter fw = new FileWriter(file);
+        FileReader fr = new FileReader(file)){
+            fw.write("This\n is\n an\n example\n");
+            fw.flush();
+
+            char[] c = new char[50];
+            fr.read(c);
+
+            for (char content : c){
+                System.out.print(content);
+            }
+
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+    }
+}
+
+class FileWriterDemo{
+    public static void main(String[] args) {
+        try{
+            FileOutputStream fos = new FileOutputStream("example.txt");
+            FileDescriptor fds = fos.getFD();
+
+            FileWriter fw = new FileWriter(fds);
+            fw.write("Hello world, FileWriter with FileDescriptor");
+
+            fw.flush();
+            fw.close();
+            fos.close();
+        } catch (IOException ex){
+            ex.printStackTrace();
+        }
+    }
+}
