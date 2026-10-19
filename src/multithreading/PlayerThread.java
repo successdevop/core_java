@@ -29,9 +29,19 @@ public class PlayerThread extends Thread{
 
     @Override
     public void run(){
-        for (int i = 0; i < 300000000; i++){
-            this.setScore(this.getScore() + random.nextInt(10)); //increment score by up to 10 points
+        System.out.println("Got Here!!!!!!!");
+        while(!this.isInterrupted()){
+            this.setScore(getScore() + random.nextInt(10));
         }
+
         System.out.println("Player "+this.getName()+" final score: "+this.getScore());
     }
+
+//    @Override
+//    public void run(){
+//        for (int i = 0; i < 300000000; i++){
+//            this.setScore(this.getScore() + random.nextInt(10)); //increment score by up to 10 points
+//        }
+//        System.out.println("Player "+this.getName()+" final score: "+this.getScore());
+//    }
 }
