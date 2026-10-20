@@ -3,7 +3,7 @@ package multithreading.tutorspot;
 public class ThreadDemo2 extends Thread{
 
     public ThreadDemo2(String name){
-        this.setName(name);
+        super(name);
         System.out.println("Creating "+name);
     }
 

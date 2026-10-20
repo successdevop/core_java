@@ -55,7 +55,7 @@ class Test1{
         GuessANumber g1 = new GuessANumber(27);
         g1.start();
 
-        g1.join();
+        g1.join(100);
 
         GuessANumber g2 = new GuessANumber(96);
         g2.start();
