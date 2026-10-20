@@ -13,7 +13,7 @@ public class ReducingLatencyDemo{
         try{
             BufferedImage img = ImageIO.read(inputFile);
             long start = System.currentTimeMillis();
-            convertToGrayScale(img);
+//            convertToGrayScale(img);
             long end = System.currentTimeMillis();
 
             long timeTaken = end - start;
