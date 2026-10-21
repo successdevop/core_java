@@ -93,18 +93,20 @@ class FinallyTest3{
 }
 
 class ThrowsDemo{
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args) {
         int a = 3, b = 0;
 
         System.out.println("result: "+divide(a,b));
 
     }
 
-    public static int divide(int a, int b) throws Exception{
-        if(b == 0){
-            throw new Exception("second argument cannot be zero");
+    public static int divide(int a, int b){
+        try {
+            return a / b;
+        }catch(ArithmeticException e) {
+            System.out.println(e.getMessage());
         }
-
-        return a/b;
+        return 0;
     }
+
 }
