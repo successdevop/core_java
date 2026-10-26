@@ -5,7 +5,7 @@ import java.util.*;
 public class CollectionsDemo{
     public static void main(String[] args) {
         List<String> a1 = new ArrayList<>();
-        a1.add("Peter");
+        a1.add(0, "Peter");
         a1.add("Success");
         a1.add("Ayan");
         System.out.println(a1);
