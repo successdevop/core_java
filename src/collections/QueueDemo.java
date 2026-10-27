@@ -18,6 +18,7 @@ public class QueueDemo{
         System.out.println("The queue after deletion: "+q);
         int num2 = q.peek();
         System.out.println("The head of the queue is: "+num2);
+        q.clear();
         int size = q.size();
         System.out.println("Size of the queue: "+size);
     }
