@@ -15,6 +15,8 @@ public class Dice{
         int num2 = scanner.nextInt();
         int num3 = scanner.nextInt();
 
+        scanner.close();
+
         System.out.println("Processing entered values.....");
         if(isLessThanOne(num1, num2, num3) || isHigherThanSix(num1, num2, num3)){
             System.out.println("You entered a number(s) outside valid range");
