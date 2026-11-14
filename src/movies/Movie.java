@@ -23,6 +23,9 @@ public class Movie{
     }
 
     public void setName(String name) {
+        if(name == null || name.trim().length() < 3){
+            throw new IllegalArgumentException("Name must not be empty and must be at least three characters");
+        }
         this.name = name;
     }
 
