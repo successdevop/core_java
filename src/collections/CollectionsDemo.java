@@ -165,3 +165,35 @@ class SortedMapDemo{
         }
     }
 }
+
+class SetDemo{
+    public static void main(String[] args) {
+        int[] numbers = {34, 22, 10, 60, 30, 22};
+        Set<Integer> num = new HashSet<>();
+        try{
+            for (int number : numbers) {
+                num.add(number);
+            }
+            System.out.println(num);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        System.out.println();
+
+        int[] numbers1 = {34, 22, 10, 60, 30, 22};
+        Set<Integer> num1 = new TreeSet<>();
+        try{
+            for (int number : numbers1) {
+                num1.add(number);
+            }
+            System.out.println(num1);
+            System.out.println("First Element of Set: "+num1.stream().findFirst());
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
+        for(Integer val : num){
+            System.out.println(val);
+        }
+    }
+}
